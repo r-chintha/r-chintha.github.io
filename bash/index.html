@@ -1,0 +1,944 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>some BASH topics - Site Title</title>
+<meta name="description" content="The more I use bash the more I find it interesting. Basically every time I encounter a useful bash commands or when I learn something new about a command, I write them down for future reference.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="some BASH topics">
+<meta property="og:url" content="http://localhost:4000/bash/">
+
+
+  <meta property="og:description" content="The more I use bash the more I find it interesting. Basically every time I encounter a useful bash commands or when I learn something new about a command, I write them down for future reference.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2016-12-02T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/bash/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Site Title</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/" >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/profile.JPG" alt="Your Name" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        I am an amazing person.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="some BASH topics">
+    <meta itemprop="description" content="The more I use bash the more I find it interesting. Basically every time I encounter a useful bash commands or when I learn something new about a command, I write them down for future reference.">
+    <meta itemprop="datePublished" content="December 02, 2016">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">some BASH topics
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>The more I use bash the more I find it interesting. Basically every time I encounter a useful bash commands or when I learn something new about a command, I write them down for future reference.</p>
+
+<p>Quick links:</p>
+
+<ul>
+  <li><a href="#regex">Regular Expression</a></li>
+  <li><a href="#globbing">File Globbing</a></li>
+  <li><a href="#array">Bash Arrays</a></li>
+  <li><a href="#find">find</a></li>
+  <li><a href="#vim">vim</a></li>
+  <li><a href="#grep">grep</a></li>
+  <li><a href="#sed">sed</a></li>
+  <li><a href="#head">head,tail</a></li>
+  <li><a href="#others">Others</a></li>
+</ul>
+
+<p>Online references:</p>
+
+<ul>
+  <li><a href="http://www.tldp.org/LDP/GNU-Linux-Tools-Summary/html/book1.htm">GNU/Linux Command-Line Tools Summary</a></li>
+</ul>
+
+<h2 id="regular-expressions"><a name="regex"></a>Regular Expressions</h2>
+<p>Regular expressions(REGEX) are sets of characters and/or <em>metacharacters</em> that <strong>match patterns</strong> —- <a href="http://tldp.org/LDP/abs/html/x17129.html">REGEX intro</a>.</p>
+
+<p>A REGEX can contain:</p>
+
+<ul>
+  <li>character set, eg: <code class="highlighter-rouge">abcd</code></li>
+  <li>anchor, eg:<code class="highlighter-rouge">^,$</code> to match beginning and end of string</li>
+  <li>modifiers, eg: <code class="highlighter-rouge">?,\</code></li>
+</ul>
+
+<p><strong>REGEX examples</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">?</code>: match any single characters</li>
+  <li><code class="highlighter-rouge">[abc]</code>: match any characters enclosed</li>
+  <li><code class="highlighter-rouge">[c-g0-7]</code>: match letters from c to g, or numbers from 0 to 7</li>
+  <li><code class="highlighter-rouge">[^b-y]</code>: except</li>
+  <li><code class="highlighter-rouge">[a1-a2]</code>: ascii code from <code class="highlighter-rouge">a1</code> to <code class="highlighter-rouge">a2</code></li>
+  <li><code class="highlighter-rouge">[!9]</code>: NOT 9</li>
+  <li><code class="highlighter-rouge">+</code>: match one or more if previous char</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo </span>aaazz | <span class="nb">grep</span> <span class="s2">"a</span><span class="se">\+</span><span class="s2">z"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>[:upper:] uppercase letters</li>
+  <li>[:lower:] lowercase letters</li>
+  <li>[:alpha:] alphabetic (letters) meaning upper+lower (both uppercase and lowercase letters)</li>
+  <li>[:digit:] numbers in decimal, 0 to 9</li>
+  <li>[:alnum:] alphanumeric meaning alpha+digits (any uppercase or lowercase letters or any decimal digits)</li>
+  <li>[:space:] whitespace meaning spaces, tabs, newlines and similar</li>
+  <li>[:graph:] graphically printable characters excluding space</li>
+  <li>[:print:] printable characters including space</li>
+  <li>[:punct:] punctuation characters meaning graphical characters minus alpha and digits</li>
+  <li>[:cntrl:] control characters meaning non-printable characters</li>
+  <li>[:xdigit:] characters that are hexadecimal digits.</li>
+</ul>
+
+<p>Functions such as <code class="highlighter-rouge">awk</code> and <code class="highlighter-rouge">egrep</code> provide even richer set of metacharacters.</p>
+
+<h2 id="-file-globbing"><a name="globbing"></a> File Globbing</h2>
+<p>File Globbing and REGEX can be confusing. REGEX is used in functions for <strong>matching text in files</strong>, while globbing is used by shells to <strong>match file/directory names</strong> using wildcards.</p>
+
+<p>Wildcards (some in REGEX may also apply):</p>
+
+<ul>
+  <li><code class="highlighter-rouge">*</code>: match any string</li>
+  <li><code class="highlighter-rouge">{}</code> is often used to extend list, eg: <br />
+  <code class="highlighter-rouge">ls {a*,b*}</code> lists files starting with either <code class="highlighter-rouge">a</code> or <code class="highlighter-rouge">b</code>.</li>
+  <li>[]: same as in REGEX</li>
+</ul>
+
+<h2 id="-bash-arrays"><a name="array"></a> Bash Arrays</h2>
+
+<ul>
+  <li>Arrays can be constructed using round brackets: <br />
+<code class="highlighter-rouge">var=(item0 item1 item2)</code> or  <br />
+<code class="highlighter-rouge">var=($(ls -d ./))</code></li>
+  <li>To access items or change item values, we can use <code class="highlighter-rouge">var[index]</code>. Eg: <br />
+<code class="highlighter-rouge">var[index]=new_value</code> <br />
+<code class="highlighter-rouge">echo ${var[index]}</code> <br />
+  Note that when <code class="highlighter-rouge">var</code> is an array, the name <code class="highlighter-rouge">var</code> actually only refers to <code class="highlighter-rouge">var[0]</code>. To refer to the whole array, need to use <code class="highlighter-rouge">var[@]</code> or <code class="highlighter-rouge">var[*]</code>.</li>
+  <li>sub-array expansion:
+    <ul>
+      <li><code class="highlighter-rouge">${var[*]:s_ind}</code>  gives the subarray starting from index <code class="highlighter-rouge">s_ind</code>.</li>
+      <li><code class="highlighter-rouge">${var[@]:s_ind:l}</code> gives you the length <code class="highlighter-rouge">l</code> sub-array starting at index <code class="highlighter-rouge">s_ind</code>.</li>
+      <li>Can also replace <code class="highlighter-rouge">@</code> with <code class="highlighter-rouge">*</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="resolve-symbolic-links">Resolve symbolic links</h2>
+<p>Say <code class="highlighter-rouge">courses</code> is a symbolic link I created. If I <code class="highlighter-rouge">cd</code> this link, and then print working directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>courses 
+<span class="nv">$ </span><span class="nb">pwd</span>
+/Users/lizeng/paths/courses
+</code></pre></div></div>
+<p>It’s showing the symbolic path, not the absolute path. To get the absolute path, we can resolve the link through:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">pwd</span> <span class="nt">-P</span> 
+/Users/lizeng/Google Drive/Yale/courses
+
+<span class="c"># same also works for many other commands</span>
+<span class="nv">$ </span><span class="nb">cd </span>courses<span class="p">;</span> <span class="nb">cd</span> ..<span class="p">;</span> <span class="nb">pwd</span>
+/Users/lizeng/paths 
+<span class="nv">$ </span><span class="nb">cd </span>courses<span class="p">;</span> <span class="nb">cd</span> <span class="nt">-P</span> ..<span class="p">;</span><span class="nb">pwd</span> 
+/Users/lizeng/Google Drive/Yale
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">-P</code> here stands for <code class="highlighter-rouge">physical</code> (directory)</p>
+
+<h2 id="vim"><a name="vim"></a>vim</h2>
+
+<ul>
+  <li>In normal mode:	
+  all keys are functional keys. Examples are:
+  -<code class="highlighter-rouge">p</code>: paste
+    <ul>
+      <li><code class="highlighter-rouge">yy</code>: copy current row to clip board</li>
+      <li><code class="highlighter-rouge">dd</code>: copy row to clip board and delete</li>
+      <li><code class="highlighter-rouge">u (ctrl+R)</code>: undo (redo) changes</li>
+      <li><code class="highlighter-rouge">hjkl</code>: left, down, right, up</li>
+      <li><code class="highlighter-rouge">:help &lt;command&gt;</code>: get help on a <code class="highlighter-rouge">command</code> — vim open the command txt file</li>
+      <li><code class="highlighter-rouge">:wq</code> or <code class="highlighter-rouge">:x</code>: <code class="highlighter-rouge">w</code> for save; <code class="highlighter-rouge">q</code> for quit</li>
+      <li><code class="highlighter-rouge">:q!</code>: quit without saving</li>
+    </ul>
+  </li>
+  <li>Insertion:
+    <ul>
+      <li><code class="highlighter-rouge">o</code>: insert a new row after current row</li>
+      <li><code class="highlighter-rouge">O</code>: insert a new row before current row</li>
+      <li><code class="highlighter-rouge">a</code>: insert after cursor</li>
+    </ul>
+  </li>
+  <li>Cursor movement:
+    <ul>
+      <li><code class="highlighter-rouge">0, :0</code>: beginning of row, page</li>
+      <li><code class="highlighter-rouge">$, :$</code>: end of row, page</li>
+      <li><code class="highlighter-rouge">^</code>: to first non-blank  character</li>
+      <li><code class="highlighter-rouge">/pattern</code>: search for pattern (press <code class="highlighter-rouge">n</code> to go to next)</li>
+      <li><code class="highlighter-rouge">H,M,L</code>: move cursor to top, middle and bottom of page</li>
+      <li><code class="highlighter-rouge">Ctrl + E,Y</code>: scroll up, down</li>
+      <li><code class="highlighter-rouge">Ctrl + u,d</code>: half page up, down</li>
+      <li><code class="highlighter-rouge">w,W,e,E,b,B</code>: jump cursor by words</li>
+    </ul>
+  </li>
+  <li>Others:		
+  -<code class="highlighter-rouge">:syntax on/off</code> : turn on/off text-highlighting colorscheme</li>
+</ul>
+
+<h2 id="find"><a name="find"></a>find</h2>
+<p>General syntax: 	
+<code class="highlighter-rouge">find path -name **** -mtime +1 -newer 20160621 -size +23M ...</code> 	
+We will introduce each of above parameters and some more in this section:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">find ./ -name "*.txt"</code> : searching by name</li>
+  <li>
+    <p><code class="highlighter-rouge">find ./ -type d -name "*LZ*"</code>: specify target type, <code class="highlighter-rouge">d</code> for directory, <code class="highlighter-rouge">f</code> for file.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">find ./ -newerct 20130323 (or a file) </code>:  	
+  file created <code class="highlighter-rouge">ct</code> after the date (also could be a file). can also use <code class="highlighter-rouge">newer</code> just for modified time</p>
+  </li>
+  <li><code class="highlighter-rouge">find ./ -mtime (-ctime, -atime) +n </code>:
+    <ul>
+      <li><code class="highlighter-rouge">m</code> for modified time</li>
+      <li><code class="highlighter-rouge">c</code> for creation time</li>
+      <li><code class="highlighter-rouge">a</code> for access time</li>
+      <li><code class="highlighter-rouge">+n</code> for greater than n days, similarly <code class="highlighter-rouge">-n</code> for within n days. Can also change measures</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">find ./ -name "PowerGod*"  -maxdepth 3</code>:  <br />
+  set maximum searching depth in this directory; similarly use <code class="highlighter-rouge">mindepth</code> to set minimum searching depth</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-iname</code> : to ignore case</p>
+  </li>
+  <li>piping finded results: 	
+  <code class="highlighter-rouge">-exec cp {} ~/LZfolder/  \;</code>: this command will copy the finded files to path <code class="highlighter-rouge">~/LZfolder/</code>
+    <ul>
+      <li>finded file will be placed in the position of <code class="highlighter-rouge">{}</code> and execute the command</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="grep"><a name="grep"></a>grep</h2>
+<p><code class="highlighter-rouge">grep</code> is used for searching lines in a file with certain pattern strings. 	
+General formula: <code class="highlighter-rouge">grep pattern filename</code>  <br />
+There are rich parameters you can specify:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">grep abc$ file</code>: match the end of a string</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">grep ^F file</code>: match the beginning of string</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">grep -w over file</code>: grep for words. 	
+  In this example, words such as <code class="highlighter-rouge">overdue, moreover</code> would be skipped.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-A3</code>: also show 3 lines after the lines found</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-B3</code>: show 3 lines before found lines</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-C3</code>: show 3 lines before and after</p>
+  </li>
+  <li>
+    <p><strong>logical grep</strong>:</p>
+    <ul>
+      <li>OR grep:  <code class="highlighter-rouge">grep pattern1|pattern2 filename</code></li>
+      <li>AND grep: <code class="highlighter-rouge">grep pattern1.*pattern2 filename</code></li>
+      <li>NOT grep: <code class="highlighter-rouge">grep -v pattern filename</code> <br />
+where <code class="highlighter-rouge">-v</code> stands for invert match</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="sed"><a name="sed"></a>sed</h2>
+
+<p><code class="highlighter-rouge">sed</code> is short for <em>Stream EDitor</em>	
+General formula: 
+<code class="highlighter-rouge">sed 's/RegEx/replacement/g'  file</code>
+which will do the work of replacing <code class="highlighter-rouge">RegEx</code> with <code class="highlighter-rouge">replacement</code>.</p>
+
+<ul>
+  <li>the separator <code class="highlighter-rouge">/</code> could be replaced by something like <code class="highlighter-rouge">_, |</code>
+    <ul>
+      <li>eg: <code class="highlighter-rouge">sed 's | age | year | ' file</code>, and would still work.</li>
+    </ul>
+  </li>
+  <li>
+    <p>simple back referencing, eg:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$echo</span> what | <span class="nb">sed</span> <span class="s1">'s/wha/&amp;&amp;&amp;/'</span>  <span class="c"># input</span>
+  whawhawhat <span class="c"># output</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>more on back referencing, eg:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">echo </span>2014-04-01 | <span class="nb">sed</span> <span class="s1">'s/\(....\)-\(..\)-\(..\)/\1+	\2+\3/'</span>
+  2014+04+01
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Things in <code class="highlighter-rouge">\(...\)</code> are referred. A dot $\cdot$ in Regex can signify any character. Useful to use dots to describe patterns.</p>
+
+<ul>
+  <li>you can also <code class="highlighter-rouge">sed</code> multiple patterns separated by <code class="highlighter-rouge">;</code>, eg:
+  <code class="highlighter-rouge">sed s/pattern1/replace1/;s/pattern2/replace2/g  &lt; file</code></li>
+</ul>
+
+<h2 id="-head-tail"><a name="head"></a> head, tail</h2>
+
+<h2 id="shell-scripting">Shell scripting</h2>
+
+<h3 id="debugging">Debugging:</h3>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">bash (or sh) -v script.sh</code> : displays each command as the program proceeds</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">bash (or sh) -x script.sh</code> : displays values of variables as program runs</p>
+  </li>
+</ul>
+
+<h2 id="-others"><a name="others"></a> Others</h2>
+
+<h3 id="boolean-value"><strong>Boolean value</strong></h3>
+<p>You can try : <code class="highlighter-rouge">false; echo $?</code> The output is <code class="highlighter-rouge">1</code>, which means in bash shell: <br />
+<code class="highlighter-rouge">1</code> for <code class="highlighter-rouge">false</code> <br />
+<code class="highlighter-rouge">0</code> for <code class="highlighter-rouge">true</code></p>
+
+<h3 id="different-parenthesis-and-brackets"><strong>Different parenthesis and brackets</strong></h3>
+<p>See  <a href="http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces">Parenthesis difference</a>.</p>
+
+<ul>
+  <li><strong>Double parenthesis</strong> (arithmetic operator) :
+    <ul>
+      <li><code class="highlighter-rouge">((  expr ))</code> : enables the usage of  things like <code class="highlighter-rouge">&lt;, &gt;, &lt;=</code> etc.</li>
+      <li><code class="highlighter-rouge">echo $(( 5 &lt;= 3 ))</code>, and we get <code class="highlighter-rouge">0</code></li>
+      <li>arithmetic operator interprets <code class="highlighter-rouge">1</code> as <code class="highlighter-rouge">true</code>, and <code class="highlighter-rouge">0</code> as <code class="highlighter-rouge">false</code>, which is different from the <code class="highlighter-rouge">test</code> command</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="braces"><strong>Braces</strong></h3>
+<ul>
+  <li>Used for <strong>parameter expansion</strong>. Can create lists which are often used in loops, eg:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="o">{</span>00..8..2<span class="o">}</span> 
+00 02 04 06 08 
+</code></pre></div></div>
+
+<h3 id="single-and-double-square-brackets"><strong>Single and double square brackets</strong></h3>
+<p>Much of below is from <a href="http://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash">bash brackets</a>, and <a href="http://www.ibm.com/developerworks/library/l-bash-test/">bash test functions</a>.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">[ expression ]</code> is the same as <code class="highlighter-rouge">test expression</code>. eg: <br />
+  <code class="highlighter-rouge">test -e "$HOME" </code> same as <code class="highlighter-rouge">[ -e "$HOME" ]</code> <br />
+and both of them requires careful handling of escaping characters.</p>
+  </li>
+  <li>
+    <p>use <code class="highlighter-rouge">-a, -o</code> or <code class="highlighter-rouge">||, &amp;&amp;</code> for group testing. eg:</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># the following are the same</span>
+<span class="nv">$ </span><span class="nb">test</span> <span class="nt">-e</span> <span class="s2">"file1"</span> <span class="nt">-a</span> <span class="nt">-d</span> <span class="s2">"file2"</span>
+<span class="nv">$ </span><span class="nb">test</span> <span class="nt">-e</span> <span class="s2">"file1"</span> <span class="o">&amp;&amp;</span> <span class="nb">test</span> <span class="nt">-d</span> <span class="s2">"file2"</span>
+<span class="nv">$ </span><span class="o">[</span> <span class="nt">-e</span> <span class="s2">"file1"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nt">-d</span> <span class="s2">"file2"</span> <span class="o">]</span>
+<span class="nv">$ </span><span class="o">[</span> <span class="nt">-e</span> <span class="s2">"file1"</span> <span class="nt">-a</span> <span class="s2">"file2"</span> <span class="o">]</span>
+</code></pre></div></div>
+
+<p>Note that <code class="highlighter-rouge">[ expr1 ] -a [ expr2 ]</code>, <code class="highlighter-rouge">[ expr1 &amp;&amp; expr2 ]</code> results in error.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">[[  expression ]]</code> allows you to use more natural syntax for file and string comparisons. If you want to compare number, it’s more common to use double brackets <code class="highlighter-rouge">(( ))</code>. <br />
+      eg. <code class="highlighter-rouge">[[ -e "file1" &amp;&amp; -e "file2" ]]</code>. <br />
+      <code class="highlighter-rouge">[[ ]]</code> doesn’t support <code class="highlighter-rouge">-a, -o</code> inside.</li>
+</ul>
+
+<h3 id="quotes"><strong>Quotes</strong></h3>
+<p>Things inside the same quote are considered as one variable.</p>
+
+<ul>
+  <li>Single quotes: preserves whatever inside</li>
+  <li>
+    <p>Double quotes: do not preserve words involving <code class="highlighter-rouge">$ or \</code> and etc.</p>
+
+    <p>See <a href="http://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash">Quotes difference</a> for more.</p>
+  </li>
+</ul>
+
+<h3 id="environment-variables"><strong>Environment Variables</strong></h3>
+<ul>
+  <li><code class="highlighter-rouge">$PS1</code>: controls shell prompt</li>
+  <li><code class="highlighter-rouge">$PATH</code>: when shell receives non-builtin command, it goes into <code class="highlighter-rouge">$PATH</code> to look for it.</li>
+  <li><code class="highlighter-rouge">$HOME</code>: home directory</li>
+</ul>
+
+<h3 id="easy-command-substitute"><strong>Easy command substitute</strong></h3>
+<p>Say my previous command is <code class="highlighter-rouge">vim project.txt</code>. Now I want to <code class="highlighter-rouge">open</code> this file instead of using <code class="highlighter-rouge">vim</code>. Then I can simply input:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="o">!</span>vim:s/vim/open   
+</code></pre></div></div>
+<p>where <code class="highlighter-rouge">$</code> is the shell prompt. Basically this is performing <code class="highlighter-rouge">sed</code> on whatever the results are from <code class="highlighter-rouge">!vim</code>.</p>
+
+<h3 id="redirection"><strong>Redirection</strong></h3>
+<p>Bash shell has 3 basic streams: <code class="highlighter-rouge">input(0)</code>, <code class="highlighter-rouge">output(1)</code>, and <code class="highlighter-rouge">error(2)</code>. We can use <code class="highlighter-rouge">#number&gt;</code> to redirect them to somewhere else, eg:</p>
+
+<ul>
+  <li>Input redirection:
+    <ul>
+      <li><code class="highlighter-rouge">&lt;</code> or <code class="highlighter-rouge">0&lt;</code></li>
+      <li><code class="highlighter-rouge">command &lt;&lt; EOF</code>, and then manually input argument file, using <code class="highlighter-rouge">EOF</code> to end inputting (or use <code class="highlighter-rouge">ctrl + D</code>). <code class="highlighter-rouge">&lt;&lt;</code> is <code class="highlighter-rouge">here document</code> symbol.</li>
+      <li><code class="highlighter-rouge">command &lt;&lt;&lt; string</code> : it’s <code class="highlighter-rouge">here string</code> symbol. Can input a one row string argument.</li>
+    </ul>
+  </li>
+  <li>output redirection:
+    <ul>
+      <li><code class="highlighter-rouge">&gt;</code> or <code class="highlighter-rouge">1&gt;</code>: redirect output</li>
+      <li><code class="highlighter-rouge">2&gt;</code>: redirect error log</li>
+      <li><code class="highlighter-rouge">2&gt;1&amp;</code> : direct stderr to stdout stream, copy where stdout goes. And <code class="highlighter-rouge">1&gt;2&amp;</code> means vice versa. Here the <code class="highlighter-rouge">&gt;&amp;</code> is a syntax to pipe one stream to another.</li>
+      <li><code class="highlighter-rouge">&amp;&gt;  filename</code>: join stdout and stderr in one stream, and put in a file.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># input redirection</span>
+<span class="nv">$ </span>./myprog &lt; file1.txt
+<span class="c"># output and err redirection</span>
+<span class="nv">$ </span>./myprog arg1 <span class="o">&gt;</span> file.out
+<span class="nv">$ </span>./myprog arg1 2&gt; file.err
+<span class="nv">$ </span>./myprog arg1 &amp;&gt; out_and_err
+</code></pre></div></div>
+
+<ul>
+  <li>Want no output <br />
+Use <code class="highlighter-rouge">command &gt; /dev/null 2&gt;&amp;1</code></li>
+</ul>
+
+<h3 id="bash_profile-profile-and-bashrc">~/.bash_profile, ~/.profile and ~/.bashrc</h3>
+<p>These are files where you can personalize commands to be executed upon shell login.</p>
+
+<p>A bash shell would look for <code class="highlighter-rouge">~/.bash_profile</code> first. If it does not exist, it executes <code class="highlighter-rouge">~/.profile</code>.</p>
+
+<p>When you start a shell in an existing session (such as screen), you get an interactive, non-login shell. That shell may read configurations in <code class="highlighter-rouge">~/.bashrc</code>.</p>
+
+<p>See discussions:  <br />
+<a href="http://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell">login, non-login</a> <br />
+<a href="http://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile">different startup files</a></p>
+
+<h3 id="command-substitution"><strong>Command substitution</strong></h3>
+<p>If we want to use the output of <code class="highlighter-rouge">command 1</code> in a sentence, we can do it in the following two ways:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>... ...  <span class="sb">`</span><span class="nb">command </span>1<span class="sb">`</span> ... ... <span class="c">#  method 1   </span>
+... ... <span class="k">$(</span><span class="nb">command </span>1<span class="k">)</span>  ... ... <span class="c"># method 2   </span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#bash" class="page__taxonomy-item" rel="tag">bash</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-02T00:00:00-07:00">December 02, 2016</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=some+BASH+topics%20http%3A%2F%2Flocalhost%3A4000%2Fbash%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbash%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fbash%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbash%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Rcpp_basic/" class="pagination--pager" title="Introduction to Rcpp: making R much much faster
+">Previous</a>
+    
+    
+      <a href="/layout/uncategorized/layout-header-video/" class="pagination--pager" title="Layout: Header Video
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Texas_Unemployment/" rel="permalink">Texas Unemployment
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This is sample post on TX unemp.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/test_notebook1/" rel="permalink">Test Notebook
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"># Normal Distribution
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/" rel="permalink">Git for version control
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/jekyll/post-exclude-search/" rel="permalink">Exclude Post from Search Index
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This post should not appear in the search index because it has the following YAML Front Matter:
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

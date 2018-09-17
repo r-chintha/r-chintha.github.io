@@ -1,0 +1,728 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Git for version control - Site Title</title>
+<meta name="description" content="Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="Git for version control">
+<meta property="og:url" content="http://localhost:4000/git/">
+
+
+  <meta property="og:description" content="Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-02-21T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/git/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Site Title</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/" >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/profile.JPG" alt="Your Name" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        I am an amazing person.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Git for version control">
+    <meta itemprop="description" content="Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.">
+    <meta itemprop="datePublished" content="February 21, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Git for version control
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.</p>
+
+<h3 id="resource">resource</h3>
+<ul>
+  <li>Online git simulator and tutorial: <a href="http://learngitbranching.js.org/">git branching</a></li>
+  <li>git tutorial: <a href="https://www.atlassian.com/git/tutorials/">git tutorial</a></li>
+  <li><a href="http://marklodato.github.io/visual-git-guide/index-en.html">A visual git reference</a></li>
+</ul>
+
+<h2 id="basic">BASIC</h2>
+
+<ul>
+  <li>
+    <p>configurations <br />
+ <code class="highlighter-rouge">git config --global user.name "your name"</code> <br />
+ <code class="highlighter-rouge">git config --global user.email "your.email"</code></p>
+  </li>
+  <li>
+    <p>initiate a git repository: <br />
+<code class="highlighter-rouge">cd</code> into the directory where you want to initiate a git repository, and use <code class="highlighter-rouge">git init</code></p>
+  </li>
+  <li>
+    <p>chech status of current repository: <code class="highlighter-rouge">git status</code>.  <br />
+It reports which branch you are on, what files are changed, and which files are not tracked.</p>
+  </li>
+  <li>
+    <p>track a file:    <br />
+If you want to keep track of the changes in <code class="highlighter-rouge">file_A</code>, use <code class="highlighter-rouge">git add file_A</code>.</p>
+  </li>
+  <li>
+    <p>rename or move a file:    <br />
+  <code class="highlighter-rouge">git mv old_file new_file</code></p>
+  </li>
+  <li>
+    <p>remove a file: <code class="highlighter-rouge">git rm  filename</code>    <br />
+  with this command the file is removed both in repository and in file system.    <br />
+  If you just want to remove it from repository, but keep the file in system (simply untrack), use:    <br />
+  <code class="highlighter-rouge">git rm --cached filename</code></p>
+  </li>
+  <li>
+    <p>check the changes in file with last staged version: <code class="highlighter-rouge">git diff filename</code>     <br />
+  changes are marked with <code class="highlighter-rouge">+</code> or <code class="highlighter-rouge">-</code></p>
+  </li>
+  <li>
+    <p>show your commit history: <code class="highlighter-rouge">git log</code></p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># show latest n commits</span>
+git log <span class="nt">-n</span>
+<span class="c"># simplified log</span>
+git log <span class="nt">--oneline</span>
+git log <span class="nt">--oneline</span>  <span class="o">[</span><span class="nt">--decorate</span><span class="o">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>use <code class="highlighter-rouge">.gitignore</code> to specify files to be ignored    <br />
+  Usually this kind of files are product files, including but not limited to:</p>
+
+    <ul>
+      <li>image files</li>
+      <li>pdfs</li>
+      <li>compiled code</li>
+      <li>system files</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="commits">Commits</h2>
+
+<ul>
+  <li>commit changes:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"commit message"</span> <span class="c">#commit all changes in repository   </span>
+	git add changed_file1 changed_file2 <span class="c"># add files to staging area</span>
+	git commit <span class="nt">-m</span> <span class="s2">"commit message"</span> <span class="c"># commit changes in staging area</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">git show</code>: can be used to show various objects        <br />
+  eg: <code class="highlighter-rouge">git show HEAD</code> —– show most recent commit</p>
+  </li>
+  <li>
+    <p>change file back to its  older version. <br />
+ <code class="highlighter-rouge">git checkout HEAD filename</code> 	<br />
+ change file back to its version in <code class="highlighter-rouge">HEAD</code>. Can replace head with other commits. Without specification of <code class="highlighter-rouge">filename</code>, the whole repository will be rewired.</p>
+  </li>
+  <li>
+    <p>move current branch to a specified commit (first 7 digits, shown in <code class="highlighter-rouge">git log</code>):    <br />
+ <code class="highlighter-rouge">git reset commit_id</code></p>
+
+    <p>See a discussion of <code class="highlighter-rouge">git reset</code> and <code class="highlighter-rouge">git checkout</code>: <a href="http://stackoverflow.com/questions/3639342/whats-the-difference-between-git-reset-and-git-checkout">reset and checkout</a>.</p>
+  </li>
+</ul>
+
+<h4 id="topics">Topics</h4>
+<p><strong>save new commits after <code class="highlighter-rouge">git checkout</code></strong> <br />
+once you use <code class="highlighter-rouge">git checkout  commit_id</code>, your head is detached, and you are not on any branch anymore (or you are on an anonymous branch). You can still stage and commit changes, but they won’t show up on branch master.</p>
+
+<p>To be able to keep those changes, you can do:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># put current changes in a branch: new</span>
+git checkout <span class="nt">-b</span> new
+<span class="c"># merge new with master</span>
+git checkout master
+git merge new  <span class="c"># may have to manually adjust conflicts</span>
+</code></pre></div></div>
+
+<p>see illustration <a href="http://marklodato.github.io/visual-git-guide/index-en.html#detached">save commits after git-checkout</a>.</p>
+
+<h2 id="branching">Branching</h2>
+<p>Branching of git is good for modulized work. Assume you have some intermediate product, and you are going to add another feature to it. It’s good practice to open up a new branch <code class="highlighter-rouge">new_feature</code>, work on that branch until your new program passed all kinds tests, and then you can safely merge the <code class="highlighter-rouge">new_feature</code> branch back to your <code class="highlighter-rouge">master branch</code>.</p>
+
+<p>This way if anything horrible happens to your <code class="highlighter-rouge">new_feature</code> code, you can always return to your master branch without worrying that your intermediate product is also messed up.</p>
+
+<ul>
+  <li>
+    <p>check which branch I’m currently on: <code class="highlighter-rouge">git branch</code></p>
+  </li>
+  <li>
+    <p>add a new branch:  <code class="highlighter-rouge">git branch new_branch_name</code></p>
+  </li>
+  <li>
+    <p>switch branch: <code class="highlighter-rouge">git checkout branch_name</code></p>
+  </li>
+  <li>
+    <p>merge a new branch to master branch: <code class="highlighter-rouge">git merge branch_name</code></p>
+  </li>
+  <li>
+    <p>delete a branch: <code class="highlighter-rouge">git branch -d branch_name</code></p>
+  </li>
+</ul>
+
+<h2 id="remote">Remote</h2>
+<p>With <code class="highlighter-rouge">git remote</code> you can freely transport your own git repository or copy others’ git repository.</p>
+
+<ul>
+  <li>
+    <p>clone git from <code class="highlighter-rouge">remote_repository</code> and put under folder <code class="highlighter-rouge">clone_name</code>:  <br />
+<code class="highlighter-rouge">git clone remote_repository clone_name</code>   <br />
+will automatically give the remote repository a name <code class="highlighter-rouge">origin</code></p>
+  </li>
+  <li>
+    <p>show current remotes:  <code class="highlighter-rouge">git remote -v</code></p>
+  </li>
+  <li>
+    <p>add a new remote under name <code class="highlighter-rouge">remote_name</code>:  <br />
+  <code class="highlighter-rouge">git remote add remote_name url</code></p>
+  </li>
+  <li>
+    <p>rename a current remote: <br />
+  <code class="highlighter-rouge">git remote rename cur_name new_name</code></p>
+  </li>
+  <li>
+    <p>change url of a current remote: <br />
+  <code class="highlighter-rouge">git remote set-url remote_name new_url</code></p>
+  </li>
+  <li>
+    <p>get most recent update from remote (saved in <code class="highlighter-rouge">origin/master</code> branch) : <code class="highlighter-rouge">git fetch origin</code></p>
+
+    <p>If you want to move to the downloaded branch, use <code class="highlighter-rouge">git checkout -- track origin/master</code></p>
+  </li>
+  <li>
+    <p>push a branch in your repository to a remote repository: <br />
+ <code class="highlighter-rouge">git push remote_name branch_name</code> <br />
+  which  pushes branch_name onto remote_name</p>
+  </li>
+</ul>
+
+<h2 id="collaboration">Collaboration</h2>
+<p>Git can make life easier when you are doing collaboration work with other people. You may have a shared repository on Github, and each of your pull the repository to your local laptop, and work on different branches. Here’s how you contribute to the online repository:</p>
+
+<p>1.<code class="highlighter-rouge">git fetch</code> and <code class="highlighter-rouge">git merge</code> (= <code class="highlighter-rouge">git pull</code>) changes from the remote</p>
+
+<p>2.Develop the feature on your branch and commit your work</p>
+
+<p>3.<code class="highlighter-rouge">git pull</code> from the remote again (in case new commits were made while you were working)</p>
+
+<p>4.Push your branch up to the remote for review</p>
+
+<p>At step 3 you can have a problem: after you make changes, the remote repository may have changed (maybe your collaborator has updated it). So <code class="highlighter-rouge">git pull</code> would fail in this case, unless you resolve the fatal file differences. <code class="highlighter-rouge">git mergetool</code> becomes very handy for this purpose (<a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git">link</a>).</p>
+
+<h2 id="others">Others</h2>
+<ul>
+  <li>
+    <p><strong><code class="highlighter-rouge">git grep string</code></strong>: <br />
+  search for <code class="highlighter-rouge">string</code> in git repository. This is extremely useful when you want to change the name of certain functions or variables, as you can locate which  files contain the things you wanna change.</p>
+  </li>
+  <li>
+    <p><strong><code class="highlighter-rouge">git commit --amend</code></strong>: <br />
+  modify the most recent <code class="highlighter-rouge">git commit</code> message</p>
+  </li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">git</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-02-21T00:00:00-07:00">February 21, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Git+for+version+control%20http%3A%2F%2Flocalhost%3A4000%2Fgit%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgit%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll/post-exclude-search/" class="pagination--pager" title="Exclude Post from Search Index
+">Previous</a>
+    
+    
+      <a href="/test_notebook1/" class="pagination--pager" title="Test Notebook
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Texas_Unemployment/" rel="permalink">Texas Unemployment
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This is sample post on TX unemp.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/test_notebook1/" rel="permalink">Test Notebook
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"># Normal Distribution
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/jekyll/post-exclude-search/" rel="permalink">Exclude Post from Search Index
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This post should not appear in the search index because it has the following YAML Front Matter:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/python/" rel="permalink">Python quick reference
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  11 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resources
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

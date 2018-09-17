@@ -1,0 +1,946 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Useful R tools - Site Title</title>
+<meta name="description" content="A great advantage of R over other statistical software (such as SAS, STATA) is that it is open source, and allows millions of programmers to contribute to the community.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="Useful R tools">
+<meta property="og:url" content="http://localhost:4000/R_advanced/">
+
+
+  <meta property="og:description" content="A great advantage of R over other statistical software (such as SAS, STATA) is that it is open source, and allows millions of programmers to contribute to the community.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2017-03-21T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/R_advanced/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Site Title</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/" >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/profile.JPG" alt="Your Name" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        I am an amazing person.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Useful R tools">
+    <meta itemprop="description" content="A great advantage of R over other statistical software (such as SAS, STATA) is that it is open source, and allows millions of programmers to contribute to the community.">
+    <meta itemprop="datePublished" content="March 21, 2017">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Useful R tools
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>A great advantage of R over other statistical software (such as SAS, STATA) is that it is open source, and allows millions of programmers to contribute to the community.</p>
+
+<p>Tons of R packages are being created everyday. Mastering a couple of useful packages can help a great deal in daily statistical analysis. This article is indended to introduce you to a few widely-used R packages in topics such as data cleanning, data presentation, and advanced plotting.</p>
+
+<h3 id="other-resource">Other resource:</h3>
+<ul>
+  <li><a href="http://r4ds.had.co.nz/introduction.html">R for data science</a> by Garrett Grolemund and Hadley Wickham</li>
+  <li><a href="http://adv-r.had.co.nz/">Advanced R</a> by Hadley Wickham</li>
+  <li>List of useful <em>R</em> packages: <a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">R packages</a></li>
+</ul>
+
+<h3 id="quick-links-to-contents">Quick links to contents:</h3>
+<ul>
+  <li><a href="#regex"><strong>R regular expressions</strong></a></li>
+  <li><a href="#large_data"><strong>How to read in large datasets in R</strong></a></li>
+  <li><a href="#dyplr"><strong>Use package <em>dyplr</em> for data handling</strong></a></li>
+  <li><a href="#tidyr"><strong>Data cleaning: <em>tidyr</em></strong></a></li>
+  <li><a href="#ggplot2"><strong>Use <em>ggplot2</em>  for data presentation</strong></a></li>
+  <li><a href="#coda"><strong>For Bayesians: <em>coda</em></strong></a></li>
+  <li><a href="#igraph"><strong>Use package <em>igraph</em></strong></a></li>
+  <li><a href="#others"><strong>Others</strong></a></li>
+</ul>
+
+<h2 id="-r-regular-expressions"><a name="regex"></a> R regular expressions</h2>
+<p><a href="http://stat545.com/block022_regular-expression.html">Regular expression in R</a></p>
+
+<h2 id="-how-to-read-large-datasets-in-r"><a name="large_data"></a> How to read large datasets in R</h2>
+
+<p>Say you have one file as big as 10+ GB, but only a subset of the data would be useful. Reading the file as a whole basically copies the file in R,  takes a lot of space and requires large memory.</p>
+
+<h4 id="solution-1-line-by-line">solution 1: line by line</h4>
+
+<p>One way to solve is by importing dataset line by line. Check if this row is needed; if yes, save it; else go to next line.</p>
+
+<p>Here’s how to import in a line-by-line fashion:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># open connection with  target file</span><span class="w">
+</span><span class="n">con</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">file</span><span class="p">(</span><span class="n">inputfile</span><span class="p">,</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"r"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># while loop: if a new line exists, continue scanning</span><span class="w">
+</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">oneLine</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">scan</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="w"> </span><span class="n">nlines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="n">what</span><span class="o">=</span><span class="s1">'character'</span><span class="p">,</span><span class="w">
+</span><span class="n">sep</span><span class="o">=</span><span class="s1">'\t'</span><span class="p">,</span><span class="n">quiet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">oneLine</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="p">){</span><span class="w">
+    </span><span class="n">save</span><span class="w"> </span><span class="n">oneLine</span><span class="w">
+    </span><span class="n">ct</span><span class="o">=</span><span class="n">ct</span><span class="m">+1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="c1"># keep track of how many rows you've scanned</span><span class="w">
+  </span><span class="k">if</span><span class="p">(</span><span class="n">ct_row</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">100000</span><span class="w"> </span><span class="o">==</span><span class="m">0</span><span class="w"> </span><span class="p">){</span><span class="w">
+    </span><span class="n">cat</span><span class="p">(</span><span class="s1">'at row'</span><span class="p">,</span><span class="n">ct_row</span><span class="p">,</span><span class="s1">'\n'</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="n">ct_row</span><span class="o">=</span><span class="n">ct_row</span><span class="m">+1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># finally close connection with target file</span><span class="w">
+</span><span class="n">close</span><span class="p">(</span><span class="n">con</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">file()</code> function enables users to build a connection to the specified file. When a connection is opened, one can incrementally read or write  a piece of data from or to the specified file, using functions such as <code class="highlighter-rouge">readLines, writeLines</code> etc.</p>
+
+<h4 id="solution-2-datatable-package">solution 2: <code class="highlighter-rouge">data.table</code> package</h4>
+
+<p>A <code class="highlighter-rouge">data.table</code> is like a <code class="highlighter-rouge">data.frame</code>, but with much simpler manipulation operations. The package also enables faster data importation into <code class="highlighter-rouge">data.table</code> format: <br />
+<code class="highlighter-rouge">my_table = fread("file_name.txt")</code></p>
+
+<p><strong><code class="highlighter-rouge">data.table</code> subsetting</strong> <br />
+Subsetting a data.table follows similar syntax as subsetting a data.frame: <code class="highlighter-rouge">DT[i,j,g]</code>, where <code class="highlighter-rouge">i</code> for rows, <code class="highlighter-rouge">j</code> for columns and <code class="highlighter-rouge">g</code> for grouping.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">i</code>, row selection examples: <br />
+  <code class="highlighter-rouge">DT[1:3]</code> <br />
+  <code class="highlighter-rouge">DT[1:3,]</code>   or <br />
+  <code class="highlighter-rouge">DT[logical_vector,]</code> such as:  <code class="highlighter-rouge">DT[var1=="certain_value",]</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">j</code>, column selection or column calculation: <br />
+  <code class="highlighter-rouge">DT[,1:3]</code> : select column 1 to 3   <br />
+  <code class="highlighter-rouge">DT[,.(new_var =  var1 + var2)]</code> : only return the new column <code class="highlighter-rouge">new_var</code> <br />
+  <code class="highlighter-rouge">DT[,.(var1,var2)]</code> : column selection
+  <code class="highlighter-rouge">DT[,.(mean=sum(var1),max=max(var2))]</code>: column calculations <br />
+  <code class="highlighter-rouge">DT[selection, .N]</code>: <code class="highlighter-rouge">.N</code> is a special sentence to return number of observations</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">g</code>: calculation by group: <br />
+  <code class="highlighter-rouge">DT[,.(mean_arr_delay = mean(arr_delay),.(carrier, origin)]</code> # mean arr_delay by carrier and origin</p>
+
+    <p><code class="highlighter-rouge">DT[, .(mean_arr_delay = mean(arr_delay), .(distance &gt; 1000)]</code> # mean arrival delay in flights with <code class="highlighter-rouge">distance &gt; 1000</code> and <code class="highlighter-rouge">distance &lt;= 1000</code></p>
+    <ul>
+      <li><code class="highlighter-rouge">with = </code>: <br />
+  some times we want to refer to columns by string variables , but data.table wouldn’t recognize that. To be able to do this, we need to restore the data.frame functionality by setting <code class="highlighter-rouge">with=F</code>:</li>
+    </ul>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="n">x</span><span class="o">=</span><span class="s2">"arr_delay"</span><span class="w">  </span><span class="c1"># column name in string</span><span class="w">
+  </span><span class="n">DT</span><span class="p">[,</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">with</span><span class="o">=</span><span class="nb">F</span><span class="p">]</span><span class="w">  </span><span class="c1"># considered as data.frame if with=F</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong><code class="highlighter-rouge">data.table</code> functions</strong></p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">set(DT,i,j,value)</code>:  <br />
+ used to change value of elements in a data.table. Eg:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="w">
+  </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="w">
+  </span><span class="n">set</span><span class="p">(</span><span class="n">DT</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1"># set top left 3*3 to 1</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>More introductions: <a href="https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf">data.table cheat sheet</a>, and <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.table introduction</a>.</p>
+
+<h2 id="-use-package-dyplr-for-data-handling"><a name="dyplr"></a> Use package <em>dyplr</em> for data handling</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">filter(data, logical _vector1, logical _vector2)</code>:</p>
+
+    <p>get the data subset, where  <code class="highlighter-rouge">logical _vector</code> is true.</p>
+  </li>
+  <li><code class="highlighter-rouge">arrange(data, var1, var2, var3)</code>:
+    <ul>
+      <li>sort rows of data first by <code class="highlighter-rouge">var1</code>, then <code class="highlighter-rouge">var2</code>, and <code class="highlighter-rouge">var3</code> in increasing order</li>
+      <li>to use decreasing order, replace variable by   <code class="highlighter-rouge">desc(variable)</code></li>
+      <li>missing values are always arranged to the end</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">select( data, var1, var2, var3)</code>:
+    <ul>
+      <li>like  filter, but it selects columns.</li>
+      <li>can use other column specifications:
+ 	 -  <code class="highlighter-rouge">var1:var2</code> (all columns from <code class="highlighter-rouge">var1</code> to <code class="highlighter-rouge">var2</code>)</li>
+      <li><code class="highlighter-rouge">start _with('***')</code> (columns whose names start with <code class="highlighter-rouge">***</code>)</li>
+      <li><code class="highlighter-rouge">ends _with('***')</code></li>
+      <li><code class="highlighter-rouge">contains('***')</code></li>
+      <li>$\ldots$</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">mutate(data, new_var= value_vec)</code></p>
+
+    <p>add a new column <code class="highlighter-rouge">new_var</code> and assign it with value <code class="highlighter-rouge">value_vec</code><br />
+use  <code class="highlighter-rouge">transmute()</code> when only want to keep new variables. Eg:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="n">head</span><span class="p">(</span><span class="n">mutate</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="n">neg_sepal</span><span class="o">=-</span><span class="n">Sepal.Width</span><span class="p">),</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="c1"># doesn't change the original data frame</span><span class="w">
+ </span><span class="n">Sepal.Length</span><span class="w"> </span><span class="n">Sepal.Width</span><span class="w"> </span><span class="n">Petal.Length</span><span class="w"> </span><span class="n">Petal.Width</span><span class="w"> </span><span class="n">Species</span><span class="w"> </span><span class="n">neg_sepal</span><span class="w">
+   </span><span class="m">1</span><span class="w">	     </span><span class="m">5.1</span><span class="w">         </span><span class="m">3.5</span><span class="w">          </span><span class="m">1.4</span><span class="w">         </span><span class="m">0.2</span><span class="w">  </span><span class="n">setosa</span><span class="w">      </span><span class="m">-3.5</span><span class="w">
+   </span><span class="m">2</span><span class="w">  	     </span><span class="m">4.9</span><span class="w">         </span><span class="m">3.0</span><span class="w">          </span><span class="m">1.4</span><span class="w">         </span><span class="m">0.2</span><span class="w">  </span><span class="n">setosa</span><span class="w">      </span><span class="m">-3.0</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">head</span><span class="p">(</span><span class="n">transmute</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="n">neg_sepal</span><span class="o">=-</span><span class="n">Sepal.Width</span><span class="p">),</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="c1"># only give new variable</span><span class="w">
+  </span><span class="n">neg_sepal</span><span class="w">
+</span><span class="m">1</span><span class="w">      </span><span class="m">-3.5</span><span class="w">
+</span><span class="m">2</span><span class="w">      </span><span class="m">-3.0</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">summarise(data, var_name= &lt; calculation of variables in data&gt; )</code>
+    <ul>
+      <li>output the given calculation under the name <code class="highlighter-rouge">var _name</code></li>
+      <li>it’s more useful when  <code class="highlighter-rouge">summarise()</code> is combined with  <code class="highlighter-rouge">group_by()</code>:</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># group rows</span><span class="w">
+</span><span class="n">grouped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group_by</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">group_var</span><span class="p">)</span><span class="w">
+</span><span class="c1"># summarize by each group</span><span class="w">
+</span><span class="n">summarise</span><span class="w"> </span><span class="p">(</span><span class="n">grouped</span><span class="p">,</span><span class="w"> </span><span class="n">var_name</span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">calculation</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">data</span><span class="o">&gt;</span><span class="p">)</span><span class="w">  
+</span><span class="c1">#</span><span class="w">
+</span><span class="c1"># example:</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp</span><span class="o">=</span><span class="n">group_by</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="n">Species</span><span class="p">)</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">summarise</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">Sepal.Length</span><span class="o">/</span><span class="n">Sepal.Width</span><span class="p">))</span><span class="w">
+</span><span class="n">Source</span><span class="o">:</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="p">[</span><span class="m">3</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+	  </span><span class="n">Species</span><span class="w">      </span><span class="n">out</span><span class="w">
+   	   </span><span class="o">&lt;</span><span class="n">fctr</span><span class="o">&gt;</span><span class="w">    </span><span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span><span class="w">
+</span><span class="m">1</span><span class="w">     </span><span class="n">setosa</span><span class="w"> </span><span class="m">1.470188</span><span class="w">
+</span><span class="m">2</span><span class="w"> </span><span class="n">versicolor</span><span class="w"> </span><span class="m">2.160402</span><span class="w">
+</span><span class="m">3</span><span class="w">  </span><span class="n">virginica</span><span class="w"> </span><span class="m">2.230453</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The first command group data rows by <code class="highlighter-rouge">group_var</code>, then the second command will return summary statistics with regarding each group. (can use function  <code class="highlighter-rouge">n()</code> to calculate number of samples in each group)</p>
+
+<ul>
+  <li>
+    <p>The use of pipe  <code class="highlighter-rouge">%&gt;%</code> :  ` x %&gt;% f(y)  = f(x,y)`</p>
+
+    <p>simply leave the position of <code class="highlighter-rouge">x</code> unspecified in <code class="highlighter-rouge">f(y)</code>.</p>
+  </li>
+  <li>
+    <p>work with package  <code class="highlighter-rouge">tibble</code> :advanced version of data frame.</p>
+
+    <ul>
+      <li>Some useful functions:<br />
+   <code class="highlighter-rouge">as _data _frame(), data _frame()</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-data-cleaning-tidyr"><a name="tidyr"></a> Data cleaning: <em>tidyr</em></h2>
+<ul>
+  <li><code class="highlighter-rouge">spread(data, key= var1, value= var2)</code>:
+    <ul>
+      <li><code class="highlighter-rouge">var1</code> is categorical, and <code class="highlighter-rouge">var2</code> is <code class="highlighter-rouge">var1</code>’s corresponding value</li>
+      <li>this function then spreads <code class="highlighter-rouge">var1</code> into multiple columns
+ convert a dataset from long to wide</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">gather(data, key, values, columns)</code>
+    <ul>
+      <li><code class="highlighter-rouge">columns</code> are gathered,  <code class="highlighter-rouge">key</code> are  column names, and <code class="highlighter-rouge">values</code> are corresponding column values</li>
+      <li>convert from wide to long</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">separate(data, var, into=c(...), sep)</code>
+    <ul>
+      <li>separate a column of data into columns, by using separator <code class="highlighter-rouge">sep</code></li>
+      <li><code class="highlighter-rouge">var</code> is the variable to be separated, <code class="highlighter-rouge">into</code> gives column names after separation, and <code class="highlighter-rouge">sep</code> stands for the separator (e.g. <code class="highlighter-rouge">sep=2</code> means separating from the second character)</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">unite(data, new_var, cols, sep )</code>
+    <ul>
+      <li>does the opposite of <code class="highlighter-rouge">separate()</code></li>
+      <li><code class="highlighter-rouge">new_var</code> is the new variable’s name after union, <code class="highlighter-rouge">cols</code> are for specification of columns to be united, and <code class="highlighter-rouge">sep</code> is the separator to be used</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-use-ggplot2-for-data-presentation"><a name="ggplot2"></a> Use <em>ggplot2</em> for data presentation</h2>
+<h3 id="general-syntax-of-ggplot2">General syntax of <strong>ggplot2</strong>:</h3>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">DATA</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+	   </span><span class="o">&lt;</span><span class="n">GEOM_FUNCTION</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="o">&lt;</span><span class="n">MAPPINGS</span><span class="o">&gt;</span><span class="p">),</span><span class="w"> 
+	   </span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">STAT</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">POSITION</span><span class="o">&gt;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  
+  </span><span class="o">&lt;</span><span class="n">COORDINATE_FUNCTION</span><span class="o">&gt;</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="o">&lt;</span><span class="n">FACET_FUNCTION</span><span class="o">&gt;</span><span class="w"> 
+</span><span class="n">plot</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="resources">resources:</h3>
+<ul>
+  <li>chapter from <em>R for data science</em>: <a href="http://r4ds.had.co.nz/data-visualisation.html">R_data_science</a></li>
+  <li>Introduction from plotly: <a href="https://plot.ly/ggplot2/">plotly_ggplot2</a></li>
+</ul>
+
+<h3 id="all-kinds-of-plot">all kinds of plot:</h3>
+<ul>
+  <li>
+    <p>Plot heatmap:  <br />
+<a href="http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization">gglot2– heatmap guide</a></p>
+  </li>
+  <li>
+    <p>Plot lines:  <br />
+<code class="highlighter-rouge">ggplot( data, aes(x_axis, y_axis, group= grouping_variable) ) + geom_line()</code></p>
+  </li>
+  <li>
+    <p>Plot boxplots: 	
+<code class="highlighter-rouge">ggplot(data) + geom_boxplot( aes( ... )) + etc.</code></p>
+  </li>
+  <li>
+    <p>Plot bars: (count data, or histogram)	  <br />
+<code class="highlighter-rouge">ggplot(data) + geom_bar( aes(x=x_variable), fill=x_var )</code> 	
+will plot counts for <code class="highlighter-rouge">x_variable</code> in the data; <code class="highlighter-rouge">fill=.</code> determines the color of each bar; set parameter position to be <code class="highlighter-rouge">stack, dodge</code> or <code class="highlighter-rouge">identity</code> for different bar presentation.</p>
+  </li>
+  <li>
+    <p>Plot points: 	
+<code class="highlighter-rouge">ggplot(data) + geom_point(mapping = aes(x= x_var,y=y_var, color = group_var, size= size_indicator))</code> 	
+Plot <code class="highlighter-rouge">y</code> against <code class="highlighter-rouge">x</code>, and points are grouped by <code class="highlighter-rouge">group_var</code>, and point size determined by <code class="highlighter-rouge">size_indicator</code>. Other useful parameters are: <code class="highlighter-rouge">shape, alpha( for transparency)</code></p>
+  </li>
+  <li>
+    <p>Plot ribbons or areas:	
+<code class="highlighter-rouge">ggplot(data) + geom_area(aes(x,y,fill, group),position='stack')</code></p>
+  </li>
+  <li>
+    <p>Add legends:</p>
+  </li>
+</ul>
+
+<h3 id="frequently-used-commands">Frequently used commands:</h3>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s1">'xlab name'</span><span class="p">)</span><span class="w"> </span><span class="c1"># add x/y axis names</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">ggtitle</span><span class="p">(</span><span class="s1">'title name'</span><span class="p">)}</span><span class="w"> </span><span class="c1"># add title to ggplot</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">ylim</span><span class="p">(</span><span class="n">low_bound</span><span class="p">,</span><span class="w"> </span><span class="n">up_bound</span><span class="p">)</span><span class="w"> </span><span class="c1"># set limits to axis limits to figure. Same thing for + xlim()</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_smooth</span><span class="p">()</span><span class="w"> 
+ 	</span><span class="c1"># can be used in geom_point() mode to plot a smoothed line; </span><span class="w">
+ 	</span><span class="c1"># often used with subset() function embedded </span><span class="w">
+ 	
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_vline</span><span class="p">(</span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">)</span><span class="w">
+	</span><span class="c1"># add horizontal, vertical lines</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">coord_polar</span><span class="p">()</span><span class="w"> 
+	</span><span class="c1"># use polar coordinate instead of the default cartesian coordinate.</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">coord_flip</span><span class="p">()</span><span class="w"> </span><span class="c1"># transpose x and y</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_histogram</span><span class="p">()</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_density</span><span class="p">()</span><span class="w">  </span><span class="c1"># plot fitted density curve (using kernel density estimation)</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_freqpoly</span><span class="p">()</span><span class="w"> </span><span class="c1"># plot fitted frequency curve</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">geom_violin</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">...</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1"># violin plot</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">var_name</span><span class="p">)</span><span class="w"> 
+	</span><span class="c1"># plot one figure for each level of variable var_name}.</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">facet_grid</span><span class="p">(</span><span class="n">var1</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">var2</span><span class="p">)</span><span class="w"> 
+ 	</span><span class="c1"># similar to facet_wrap, treat var1*var2 as the level indicator</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">coord_trans</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'...'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'...'</span><span class="p">)</span><span class="w"> 
+	</span><span class="c1"># replace ... with 'sqrt', 'log10' etc to perform data transformation</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">coord_cartesian</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">ylim</span><span class="o">=</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">expand</span><span class="o">=</span><span class="w"> </span><span class="p">)</span><span class="w">
+  </span><span class="c1"># set coordinate limits</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">annotate</span><span class="p">(</span><span class="s2">"text"</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">"lable"</span><span class="p">)</span><span class="w"> 
+	</span><span class="c1"># add text at coordinate (x,y)</span><span class="w">
+
+</span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span><span class="p">),</span><span class="n">hjust</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
+	</span><span class="c1"># rotate x axis text</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="faq">FAQ:</h3>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/1330989/rotating-and-spacing-axis-labels-in-ggplot2">Rotate x-axis texts</a></li>
+</ul>
+
+<h2 id="-for-bayesians-coda"><a name="coda"></a> For Bayesians: <em>coda</em></h2>
+
+<ul>
+  <li><code class="highlighter-rouge">mcmc(data, ... )</code>:
+    <ul>
+      <li>create <code class="highlighter-rouge">mcmc</code> object</li>
+      <li><code class="highlighter-rouge">data</code>  is a vector of samples for one parameter, or matrix of samples for multiple parameter (each columns for one parameter )</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">plot(mcmc_obj)</code>  can get traces and density estimates</p>
+  </li>
+  <li>
+    <p>use <code class="highlighter-rouge">autocorr.diag(), autocorr.plot()</code> to check out auto-correlation between samples.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">rejectionRate( mcmc_obj )</code> 	
+ Calculate rejection probability for each parameter in the mcmc object.</p>
+  </li>
+  <li><code class="highlighter-rouge">geweke.diag(mcmc_obj)</code> and <code class="highlighter-rouge">geweke.plot(mcmc_obj)</code>:
+    <ul>
+      <li>visualization of mixing performance</li>
+      <li>difference of mean test between the first 0.1 and the last 0.5 proportion. Lots of points outside the Z-score [-2,2] region indicates bad mixing</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-use-package-igraph"><a name="igraph"></a> Use package <em>igraph</em></h2>
+
+<h4 id="plot-trees-and-networks">plot trees and networks</h4>
+<ul>
+  <li>plot directed network:</li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">parents</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># specify parent of each node</span><span class="w">
+</span><span class="n">ids</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="c1"># id of each child</span><span class="w">
+</span><span class="n">data</span><span class="o">=</span><span class="n">data.frame</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">parent</span><span class="p">)</span><span class="w">
+</span><span class="n">g</span><span class="o">=</span><span class="n">graph.data.frame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="c1"># create igraph type of graph</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="c1"># plot the graph</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>plot trees<br />
+Steps are similar to plotting networks, but you need to specify layout method so that the output is clearly a tree.</li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="o">=</span><span class="n">data.frame</span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">),</span><span class="n">parent</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span><span class="w">
+</span><span class="n">g</span><span class="o">=</span><span class="n">graph.data.frame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="c1"># create igraph type of graph</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="n">layout.reingold.tilford</span><span class="p">)</span><span class="w"> </span><span class="c1"># plot the graph</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="-others"><a name="others"></a> Others</h2>
+<h4 id="global-variable">Global variable</h4>
+<p>There are two ways to assign values to parameters in the global environment, either using <code class="highlighter-rouge">&lt;&lt;-</code> or <code class="highlighter-rouge">assign()</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="o">=</span><span class="m">3</span><span class="w">
+</span><span class="n">temp</span><span class="o">=</span><span class="k">function</span><span class="p">(){</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="n">x</span><span class="m">+3</span><span class="w">
+</span><span class="c1"># or: assign("x",x+3,envir=.GlobalEnv)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="install-r-packages-on-server">Install R packages on server</h4>
+<p>Sometimes when using <code class="highlighter-rouge">install.packages("pack_name")</code> in a cluster environment it returns <code class="highlighter-rouge"><span class="k">package</span> <span class="p">***</span> <span class="k">not</span> <span class="n">found</span></code>, which doesn’t happen when we run it on our own computer.<br />
+Fortunately, this usually could be solved just by adding <code class="highlighter-rouge">repos="http://cran.case.edu"</code>(See <a href="https://orfe.princeton.edu/help/r-packages">install R packages in cluster</a>)</p>
+
+<h4 id="useful-functions">Useful functions</h4>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">match(x,elts)</code>: returns a vector of the first appearance location of each elements of <code class="highlighter-rouge">elts</code> in <code class="highlighter-rouge">x</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">tabulate(x)</code> :  like <code class="highlighter-rouge">table(x)</code>, but just returns the vector, no other attributes is returned</p>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#r" class="page__taxonomy-item" rel="tag">R</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-03-21T00:00:00-07:00">March 21, 2017</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Useful+R+tools%20http%3A%2F%2Flocalhost%3A4000%2FR_advanced%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FR_advanced%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2FR_advanced%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FR_advanced%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/layout/uncategorized/layout-header-video/" class="pagination--pager" title="Layout: Header Video
+">Previous</a>
+    
+    
+      <a href="/personal_website/" class="pagination--pager" title="Build your own website (with Jekyll and Minimal-mistakes theme)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Texas_Unemployment/" rel="permalink">Texas Unemployment
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This is sample post on TX unemp.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/test_notebook1/" rel="permalink">Test Notebook
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"># Normal Distribution
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/git/" rel="permalink">Git for version control
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git is a great version control tool. It allows you to keep a history of your code, sync your project online and collaborate with others.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/jekyll/post-exclude-search/" rel="permalink">Exclude Post from Search Index
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This post should not appear in the search index because it has the following YAML Front Matter:
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
